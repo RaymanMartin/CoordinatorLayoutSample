@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CoordinatorLayout.iml" filepath="$PROJECT_DIR$/CoordinatorLayout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Coordinator的应用/Coordinator的应用.iml" filepath="$PROJECT_DIR$/Coordinator的应用/Coordinator的应用.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bottomsheet的应用/bottomsheet的应用.iml" filepath="$PROJECT_DIR$/bottomsheet的应用/bottomsheet的应用.iml" />
+    </modules>
+  </component>
+</project>

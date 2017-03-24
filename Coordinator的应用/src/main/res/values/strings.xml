@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CoordinatorLayout的配合使用</string>
+    <string name="title_activity_tablayout">TablayoutActivity</string>
+</resources>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tb_bar"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_gravity="top"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:layout_scrollFlags="scroll">
+
+        <RelativeLayout
+            android:id="@+id/rl_top"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FBFBFB"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/iv_society_back"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/icon_society_back" />
+
+            <TextView
+                android:id="@+id/tv_society_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="社区圈"
+                android:textColor="#222222"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/iv_society_home"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/icon_society_home" />
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/cl_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FBFBFB">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/abl_top"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <!--AppBarLayout下子View需要设置layout_scrollFlags属性-->
+            <!--属性有：scroll,enterAlways,enterAlwaysCollapsed,exitUntilCollapsed,snap-->
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
+                <!--背景图-->
+                <!--滑动动画固定 app:layout_collapseMode="pin"-->
+                <!--动画跟随滚动app:layout_collapseMode="parallax" -->
+
+                <!--数据展示-->
+                <RelativeLayout
+                    android:id="@+id/rl_society_detail_rect"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_collapseMode="parallax">
+
+                    <ImageView
+                        android:id="@+id/iv_society_detail_bg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/bg_society_detail" />
+
+                    <ImageView
+                        android:id="@+id/iv_society_detail_pic"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="14dp"
+                        android:src="@drawable/icon_society_pic" />
+
+                    <TextView
+                        android:id="@+id/tv_society_detail_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="28dp"
+                        android:layout_toRightOf="@id/iv_society_detail_pic"
+                        android:text="MrX用户"
+                        android:textColor="#ffffff"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/tv_society_detail_content"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_society_detail_name"
+                        android:layout_marginTop="6dp"
+                        android:layout_toRightOf="@id/iv_society_detail_pic"
+                        android:text="最搞笑最奇葩的都聚集在这里"
+                        android:textColor="#FFFFFA"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/tv_society_detail_hot"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_society_detail_content"
+                        android:layout_marginTop="6dp"
+                        android:layout_toRightOf="@id/iv_society_detail_pic"
+                        android:text="人气：116752"
+                        android:textColor="#FFFFFA"
+                        android:textSize="11sp" />
+                    <!--已加入-->
+                    <LinearLayout
+                        android:id="@+id/ll_recommend_already_add"
+                        style="@style/SocietyAlreadyAdd">
+
+                        <ImageView
+                            android:layout_width="13dp"
+                            android:layout_height="13dp"
+                            android:layout_marginLeft="3dp"
+                            android:src="@drawable/icon_already_add" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:gravity="center"
+                            android:text="已加入"
+                            android:textColor="#646569"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                    <!--未加入-->
+                    <LinearLayout
+                        android:id="@+id/ll_recommend_add"
+                        style="@style/SocietyAdd"
+                        android:visibility="visible">
+
+                        <ImageView
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_marginLeft="3dp"
+                            android:src="@drawable/icon_recommend_add" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="2dp"
+                            android:gravity="center"
+                            android:text=" 加 入"
+                            android:textColor="#ffffff"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+            </android.support.design.widget.CollapsingToolbarLayout>
+
+            <!--TabLayout导航栏-->
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab_layout"
+                style="@style/TabLayoutCommonDesign"
+                app:tabIndicatorColor="@color/colorTabSelectedColor"
+                app:tabIndicatorHeight="1dp"
+                app:tabMode="fixed"
+                app:tabSelectedTextColor="@color/colorTabSelectedColor"
+                app:tabTextColor="@color/colorTabUnSelectedColor" />
+        </android.support.design.widget.AppBarLayout>
+
+        <!--这里需要设置Behavior监听滚动的事件-->
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vp_society_my_data"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+    </android.support.design.widget.CoordinatorLayout>
+</LinearLayout>
