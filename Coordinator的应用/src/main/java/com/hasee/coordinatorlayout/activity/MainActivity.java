@@ -1,6 +1,7 @@
 package com.hasee.coordinatorlayout.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
@@ -52,6 +53,8 @@ public class MainActivity extends AppCompatActivity {
     private ViewTreeObserver viewTreeObserver;
     private ViewGroupGlobalListener mGlobalViewListener;
 
+    private LinearLayout mLl_add;
+
     /*滚动*/
     private CoordinatorLayout mCoordinator;
 //    private SwipyRefreshLayout mSwipyRefreshLayout;
@@ -98,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
         /*刷新*/
         mCoordinator = (CoordinatorLayout) findViewById(R.id.cl_layout);
 //        mSwipyRefreshLayout = (SwipyRefreshLayout) findViewById(R.id.srl_layout);
+        mLl_add = (LinearLayout) findViewById(R.id.ll_recommend_add);
 
         latestFragment = new SocietyHotFragment();
         hotFragment = new SocietyHotFragment();
@@ -199,6 +203,13 @@ public class MainActivity extends AppCompatActivity {
                 }, 2000);
             }
         });*/
+
+        mLl_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, CollapsingActivity.class));
+            }
+        });
     }
 
     /**

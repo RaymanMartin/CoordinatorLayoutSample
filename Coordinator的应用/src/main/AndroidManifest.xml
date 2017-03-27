@@ -15,5 +15,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.CollapsingActivity" />
+        <activity android:name=".activity.ToolBarActivity" />
     </application>
 </manifest>
